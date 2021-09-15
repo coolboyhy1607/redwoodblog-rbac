@@ -16,3 +16,4 @@ web/types/graphql.d.ts
 logs/*/**å
 
 redwood/*
+.env
