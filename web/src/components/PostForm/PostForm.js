@@ -6,6 +6,7 @@ import {
   TextField,
   Submit,
 } from '@redwoodjs/forms'
+import Editor from 'rich-markdown-editor'
 
 const PostForm = (props) => {
   const onSubmit = (data) => {
