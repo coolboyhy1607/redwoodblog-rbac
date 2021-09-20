@@ -17,6 +17,6 @@
   schemaPath = "./api/db/schema.prisma"
   includeEnvironmentVariables = ['SITE_NAME', 'NETLIFY_IDENTITY_REGISTRATION_WEBHOOK_SECRET','INCOMING_RESEED_HOOK_URL']
 [browser]
-  open = false
+  open = true
 [experimental]
   esbuild = false
