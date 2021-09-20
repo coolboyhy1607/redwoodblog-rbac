@@ -1,6 +1,17 @@
 // Define your own mock data here:
 export const standard = (/* vars, { ctx, req } */) => ({
-  blogPost: {
+  post: {
     id: 42,
+    title: 'First post',
+    body: `Neutra tacos hot chicken prism raw denim, put a bird on it
+            enamel pin post-ironic vape cred DIY. Street art next level
+            umami squid. Hammock hexagon glossier 8-bit banjo. Neutra
+            la croix mixtape echo park four loko semiotics kitsch forage
+            chambray. Semiotics salvia selfies jianbing hella shaman.
+            Letterpress helvetica vaporware cronut, shaman butcher YOLO
+            poke fixie hoodie gentrify woke heirloom.`,
+    createdAt: '2020-01-01T12:34:45Z',
+    publishedAt: '2020-01-02T12:34:45Z',
+    updatedAt: '2020-01-03T12:34:45Z',
   },
 })

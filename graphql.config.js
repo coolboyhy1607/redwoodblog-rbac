@@ -1,5 +1,11 @@
-const { getPaths } = require('@redwoodjs/internal')
-
 module.exports = {
-  schema: getPaths().generated.schema,
+  schema: ['.redwood/schema.graphql'],
+  documents: '**/*.{graphql,js,ts,jsx,tsx}',
+  extensions: {
+    endpoints: {
+      default: {
+        url: 'http://localhost:8910',
+      },
+    },
+  },
 }
