@@ -4,7 +4,7 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { RedwoodReactQueryProvider } from 'redwoodjs-react-query-provider'
-
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { isBrowser } from '@redwoodjs/prerender/browserUtils'
 
 import Routes from 'src/Routes'
@@ -22,6 +22,7 @@ const App = () => (
         <AuthProvider client={netlifyIdentity} type="netlify">
           <RedwoodReactQueryProvider>
             <Routes />
+            <ReactQueryDevtools initialIsOpen={false} />
           </RedwoodReactQueryProvider>
         </AuthProvider>
       </QueryClientProvider>
