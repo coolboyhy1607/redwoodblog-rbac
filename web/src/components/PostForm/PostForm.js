@@ -69,6 +69,9 @@ const PostForm = (props) => {
           onHoverLink={function noRefCheck() {}}
           onSave={function noRefCheck() {}}
           onShowToast={function noRefCheck() {}}
+          onChange={function noRefCheck(getEditorText) {
+            console.log(getEditorText)
+          }}
         />
         <FieldError name="body" className="rw-field-error" />
 
