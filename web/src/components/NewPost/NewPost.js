@@ -32,7 +32,7 @@ const NewPost = () => {
   })
 
   const onSave = (input) => {
-    // console.log('input:', input)
+    console.log('input:', { input })
     createPost({ variables: { input } })
   }
 

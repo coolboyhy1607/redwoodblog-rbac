@@ -3,6 +3,7 @@
     "noEmit": true,
     "allowJs": true,
     "esModuleInterop": true,
+    "experimentalDecorators": false,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",

@@ -7,13 +7,18 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 import Editor from 'rich-markdown-editor'
+import React, { useState } from 'react'
 
 const PostForm = (props) => {
-  const onSubmit = (data) => {
-    // props.onSave(data, props?.post?.id)
-    console.log('data:', data)
+  const [title, setTitle] = useState('Title')
+  const [body, setBody] = useState('Body')
+  const onSubmit = () => {
+    props.onSave({ title: title, body: body }, props?.post?.id)
+    console.log('data:', title, body)
   }
-
+  const handleChangedTitle = (event) => {
+    setTitle(event.target.value)
+  }
   return (
     <div className="rw-form-wrapper">
       <Form onSubmit={onSubmit} error={props.error}>
@@ -31,13 +36,14 @@ const PostForm = (props) => {
         >
           Title
         </Label>
-        <TextField
+        <input type="title" value={title} onChange={handleChangedTitle} />
+        {/* <TextField
           name="title"
           defaultValue={props.post?.title}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-        />
+        /> */}
         <FieldError name="title" className="rw-field-error" />
 
         <Label
@@ -56,7 +62,6 @@ const PostForm = (props) => {
         /> */}
 
         <Editor
-          name="body"
           defaultValue="# Welcome
 
                       Just an easy to use **Markdown** editor with `slash commands`"
@@ -70,7 +75,7 @@ const PostForm = (props) => {
           onSave={function noRefCheck() {}}
           onShowToast={function noRefCheck() {}}
           onChange={function noRefCheck(getEditorText) {
-            console.log(getEditorText)
+            setBody(getEditorText)
           }}
         />
         <FieldError name="body" className="rw-field-error" />
