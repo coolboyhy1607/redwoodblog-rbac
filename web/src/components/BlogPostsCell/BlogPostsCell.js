@@ -1,7 +1,7 @@
 import BlogPostSummary from 'src/components/BlogPostSummary'
 
 export const QUERY = gql`
-  query query211 {
+  query {
     posts {
       ...postFields
     }
