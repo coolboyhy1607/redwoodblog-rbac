@@ -2,6 +2,8 @@ import { Link, routes } from '@redwoodjs/router'
 import moment from 'moment'
 import { useAuth } from '@redwoodjs/auth'
 import { MetaTags } from '@redwoodjs/web'
+import Editor from '../Editor/Editor'
+import RichMarkdownEditor from 'rich-markdown-editor'
 
 const BlogPost = ({ post }) => {
   const { hasRole } = useAuth()
@@ -126,7 +128,7 @@ const BlogPost = ({ post }) => {
           </h1>
         </div>
         <div className="prose prose-lg text-gray-500 mx-auto">
-          <p>{post.body}</p>
+          <RichMarkdownEditor readOnly={true} value={post.body} />
         </div>
         <div className="prose prose-lg text-gray-500 mx-auto">
           {(hasRole('admin') || hasRole('editor')) && (

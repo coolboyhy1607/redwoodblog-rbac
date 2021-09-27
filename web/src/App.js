@@ -6,7 +6,7 @@ import { QueryClientProvider, QueryClient } from 'react-query'
 import { RedwoodReactQueryProvider } from 'redwoodjs-react-query-provider'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { isBrowser } from '@redwoodjs/prerender/browserUtils'
-
+import { ChakraProvider } from '@chakra-ui/react'
 import Routes from 'src/Routes'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 
@@ -21,7 +21,9 @@ const App = () => (
       <QueryClientProvider client={queryClient}>
         <AuthProvider client={netlifyIdentity} type="netlify">
           <RedwoodReactQueryProvider>
-            <Routes />
+            <ChakraProvider>
+              <Routes />
+            </ChakraProvider>
             <ReactQueryDevtools initialIsOpen={false} />
           </RedwoodReactQueryProvider>
         </AuthProvider>
