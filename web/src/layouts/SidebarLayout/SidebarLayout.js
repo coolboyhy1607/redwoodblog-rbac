@@ -56,12 +56,36 @@ const SidebarLayout = ({ children }) => {
                     fill="none"
                     viewBox="0 0 24 24"
                   >
-                    <path
+                    <rect
+                      x="5"
+                      y="6.75"
+                      width="14"
+                      height="1.5"
+                      rx="0.5"
+                      fill="#111"
+                    ></rect>
+                    <rect
+                      x="5"
+                      y="11.25"
+                      width="14"
+                      height="1.5"
+                      rx="0.5"
+                      fill="#111"
+                    ></rect>
+                    <rect
+                      x="5"
+                      y="15.75"
+                      width="9"
+                      height="1.5"
+                      rx="0.5"
+                      fill="#111"
+                    ></rect>
+                    {/* <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
                       d="M6 18L18 6M6 6l12 12"
-                    />
+                    /> */}
                   </svg>
                 </button>
               </div>
@@ -81,12 +105,30 @@ const SidebarLayout = ({ children }) => {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
+                      <rect
+                        x="5"
+                        y="6.75"
+                        width="14"
+                        height="1.5"
+                        rx="0.5"
+                        fill="#111"
+                      ></rect>
+                      <rect
+                        x="5"
+                        y="11.25"
+                        width="14"
+                        height="1.5"
+                        rx="0.5"
+                        fill="#111"
+                      ></rect>
+                      <rect
+                        x="5"
+                        y="15.75"
+                        width="9"
+                        height="1.5"
+                        rx="0.5"
+                        fill="#111"
+                      ></rect>
                     </svg>
                     News
                   </NavLink>

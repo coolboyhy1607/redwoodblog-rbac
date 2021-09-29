@@ -4,6 +4,7 @@ import { useAuth } from '@redwoodjs/auth'
 import { MetaTags } from '@redwoodjs/web'
 import { useAtom } from 'jotai'
 import { isEditing } from 'src/stores/stores'
+import EditButton from 'src/components/button/EditButton'
 
 const PostsLayout = (props) => {
   const { hasRole } = useAuth()
@@ -21,15 +22,7 @@ const PostsLayout = (props) => {
               Posts
             </Link>
           </h1>
-          {(hasRole('admin') || hasRole('author')) && (
-            <Link
-              to={routes.newPost()}
-              className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-            >
-              <div className="rw-button-icon"></div>
-              {isEditingState ? 'Done Editing' : 'New Post'}
-            </Link>
-          )}
+          {(hasRole('admin') || hasRole('author')) && <EditButton />}
         </header>
         <main className="rw-main">{props.children}</main>
       </div>

@@ -1,12 +1,10 @@
 import { AuthProvider } from '@redwoodjs/auth'
 import netlifyIdentity from 'netlify-identity-widget'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { RedwoodReactQueryProvider } from 'redwoodjs-react-query-provider'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { isBrowser } from '@redwoodjs/prerender/browserUtils'
-import { ChakraProvider } from '@chakra-ui/react'
 import Routes from 'src/Routes'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 
@@ -21,9 +19,7 @@ const App = () => (
       <QueryClientProvider client={queryClient}>
         <AuthProvider client={netlifyIdentity} type="netlify">
           <RedwoodReactQueryProvider>
-            <ChakraProvider>
-              <Routes />
-            </ChakraProvider>
+            <Routes />
             <ReactQueryDevtools initialIsOpen={false} />
           </RedwoodReactQueryProvider>
         </AuthProvider>

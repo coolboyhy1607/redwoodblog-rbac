@@ -4,7 +4,6 @@ import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
 import PostForm from 'src/components/PostForm'
-import { Container } from '@chakra-ui/react'
 
 export const QUERY = gql`
   query FIND_EDIT_POST_BY_ID($id: Int!) {
@@ -52,17 +51,9 @@ export const Success = ({ post }) => {
       hasRole('author') ||
       hasRole('editor') ||
       hasRole('publisher')) && (
-      <Container>
-        <h2>Edit Post {post.id}</h2>
-        <div>
-          <PostForm
-            post={post}
-            onSave={onSave}
-            error={error}
-            loading={loading}
-          />
-        </div>
-      </Container>
+      <div>
+        <PostForm post={post} onSave={onSave} error={error} loading={loading} />
+      </div>
     )
   )
 }
