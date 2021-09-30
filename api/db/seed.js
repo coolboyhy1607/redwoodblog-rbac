@@ -63,7 +63,6 @@ async function main() {
   // }
 
   const existing = await db.post.findMany()
-  console.log(existing)
   if (!existing.length) {
     await db.post.create({
       data: {
@@ -110,9 +109,10 @@ async function main() {
     console.info('Existing data. Not overwriting seeds.')
   }
 }
-
-main()
-  .catch((e) => console.error(e))
-  .finally(async () => {
-    await db.$disconnect()
-  })
+export async function seed() {
+  main()
+    .catch((e) => console.error(e))
+    .finally(async () => {
+      await db.$disconnect()
+    })
+}
