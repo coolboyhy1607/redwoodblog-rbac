@@ -6,7 +6,7 @@ const BlogLayout = ({ children }) => {
           News
         </h1>
       </div>
-      <div className="mt-6 grid gap-16 pt-10 lg:grid-cols-2 lg:col-gap-5 lg:row-gap-12">
+      <div className="mt-6 grid gap-16 pt-10 md:grid-cols-2 lg:grid-cols-3 lg:col-gap-3 lg:row-gap-7 justify-items-auto">
         {children}
       </div>
     </div>

@@ -60,13 +60,13 @@ const PostForm = (props) => {
             value={documentTextState}
             readOnly={!isEditingState}
           />
-          {/* <Button
+          <Button
             onClick={onSubmit}
             // disabled={savingIsDisabled}
             // neutral={isDraft}
           >
             Save
-          </Button> */}
+          </Button>
         </div>
       </div>
     </section>
